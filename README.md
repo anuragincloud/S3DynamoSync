@@ -5,15 +5,15 @@ The system was built to enhance operational efficiency by eliminating manual dat
 
 # Working
 
-1. Triggering the Process
+1.Triggering the Process : 
 When a CSV file is uploaded to the S3 bucket, the event triggers the Lambda function.
 The Lambda function captures the event details, including the S3 bucket name and the key (file name). It then downloads the CSV file to the local /tmp/ directory on the Lambda execution environment.
 
-2.Processing the CSV File
+2.Processing the CSV File : 
 The Lambda function reads the downloaded CSV file using Python’s 'csv.DictReader', which parses the file line by line. Each line in the CSV is treated as a dictionary where the column headers are the keys, and the values are the data.
 
-3.Inserting Data into DynamoDB
+3.Inserting Data into DynamoDB : 
 The function uses the 'put_item' method from Boto3 to insert each row of data into the DynamoDB table. This operation is performed in real-time, ensuring that the data is immediately available for use.
 
-4.Final Output
+4.Final Output : 
 Once the CSV file has been fully processed and all data has been inserted into DynamoDB, the Lambda function returns a summary of the operation, such as the number of records successfully inserted.
