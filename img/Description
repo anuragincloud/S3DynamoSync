@@ -1,5 +1,8 @@
 This folder contains the images of the resources deployed on AWS Cloud for this Project.
 I have included the images of :
   -AWS Lambda Function
+  -AWS Lambda Role
   -S3 Bucket
   -DynamoDB Table
+  -Cloudwatch Log Group
+  -Cloudwatch Log Stream
